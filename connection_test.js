@@ -10,7 +10,7 @@ const password = "securePassword";
 
 
 
-const socket = io('https://groupproject2-782a083d1ebb.herokuapp.com');
+const socket = io('https://groupplanning-26349a3e30f0.herokuapp.com');
 
 socket.on('connect', () => {
     console.log('Connected to server');

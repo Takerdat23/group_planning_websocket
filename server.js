@@ -24,11 +24,11 @@ io.on('connection', (socket) => {
     await login.SignUpUser(UserName, Email, password)
       .then(() => {
         console.log('Signup successful');
-        socket.emit('serverLog', 'Signup successful'); 
+        socket.emit('SignUpState', 'Signup successful'); 
       })
       .catch((error) => {
         console.error('Signup failed:', error);
-        socket.emit('serverLog', 'Signup failed: ' + error); 
+        socket.emit('SignUpState', 'Signup failed: ' + error); 
       });
   });
 
@@ -40,10 +40,10 @@ io.on('connection', (socket) => {
     console.log(result); 
     if (result.success) {
       console.log("success")
-      socket.emit('serverLog', result);
+      socket.emit('LoginState', result);
     } else {
  
-      socket.emit('serverLog', result);
+      socket.emit('LoginState', result);
     }
   });
 
@@ -65,5 +65,5 @@ io.on('connection', (socket) => {
 
 const  PORT = process.env.PORT || 4000 
 server.listen(PORT,'0.0.0.0', () => {
-  console.log('Listening on port 4000');
+  console.log('Listening on link');
 });
