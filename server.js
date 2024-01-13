@@ -4,7 +4,7 @@ import { Server } from 'socket.io';
 import { useAzureSocketIO } from "@azure/web-pubsub-socket.io";
 import { signUp } from "./Database/user/signup.js"
 import { login } from "./Database/user/login.js"
-import { addMember } from './Database/project/addMember.js';
+
 
 const app = express();
 const server = http.createServer(app);
