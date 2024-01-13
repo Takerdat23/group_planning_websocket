@@ -75,7 +75,7 @@ io.on('connection', (socket) => {
 
     if (result.success) {
       console.log("login successful")
-      socket.emit('user log', "login successful")
+      socket.emit('LoginState', result)
       socket.emit("user change", result.user)
       socket.join(result.user.sharedIDs)
     } else {
