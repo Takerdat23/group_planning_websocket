@@ -1,7 +1,6 @@
 import express from 'express';
 import http from 'http';
 import { Server } from 'socket.io';
-import { useAzureSocketIO } from "@azure/web-pubsub-socket.io";
 import { signUp } from "./Database/user/signup.js"
 import { login } from "./Database/user/login.js"
 
@@ -107,6 +106,6 @@ io.on('connection', (socket) => {
   });
 });
 
-server.listen(4000, () => {
+server.listen(process.env.PORT || 4000, () => {
   console.log('Listening on port 4000');
 });
